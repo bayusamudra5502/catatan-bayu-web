@@ -6,6 +6,35 @@ module.exports = {
     siteUrl: `https://note.bayusamudra.my.id/`,
   },
   plugins: [
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              aliases: {
+                sh: "bash"
+              }
+            }
+          },
+          `gatsby-remark-katex`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+            },
+          },
+        ]
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-contents`,
+        path: `${__dirname}/src/contents`,
+      },
+    },
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,

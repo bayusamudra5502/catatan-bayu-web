@@ -8,6 +8,7 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import Twemoji from 'react-twemoji';
 
 import Header from "./header"
 import "../styles/layout.scss"
@@ -24,7 +25,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <Twemoji>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{
@@ -39,12 +40,10 @@ const Layout = ({ children }) => {
             marginTop: `2rem`,
           }}
         >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          Dibuat dengan ❤️ oleh Bayu Samudra, 2020
         </footer>
       </div>
-    </>
+    </Twemoji>
   )
 }
 
