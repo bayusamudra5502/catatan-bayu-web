@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[678],{7704:function(e,t,a){a.r(t);var l=a(7294),n=a(5127),u=a(3751);t.default=function(){return l.createElement(n.Z,null,l.createElement(u.Z,{title:"Home"}),l.createElement("h1",null,"Halo, Dunia"))}}}]);
+//# sourceMappingURL=component---src-pages-index-js-c834928b86cfcbf9ff60.js.map
