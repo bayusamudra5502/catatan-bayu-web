@@ -1,18 +1,27 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Catatan Bayu`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Bayu Samudra`,
+      summary: `seorang mahasiswa yang tertarik dengan dunia Pemrograman Web dan Computer Science.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `Catatan-catatan bayu sehari-hari.`,
+    siteUrl: `https://note.bayusamudra.my.id/`,
     social: {
-      twitter: `kylemathews`,
+      github: 'bayusamudra5502'
     },
   },
   plugins: [
     `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `#00757A`,
+        // Disable the loading spinner.
+        showSpinner: false,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -43,6 +52,7 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
+          `gatsby-remark-katex`,
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
@@ -50,6 +60,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,
     // {
     //   resolve: `gatsby-plugin-google-analytics`,
@@ -112,13 +123,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Catatan Bayu`,
+        short_name: `Catatan Bayu`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
+        background_color: `#00757A`,
+        theme_color: `#00757A`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,
