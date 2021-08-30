@@ -6,7 +6,8 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const siteTitle = data.site.siteMetadata?.title || `Catatan Bayu`
+  const siteDescription = data.site.siteMetadata?.description || "Ini adalah catatan bayu"
   const posts = data.allMarkdownRemark.nodes
 
   if (posts.length === 0) {
@@ -15,17 +16,25 @@ const BlogIndex = ({ data, location }) => {
         <Seo title="All posts" />
         <Bio />
         <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
+          Belum ada postingan disini... Coba cek lagi besok yaa..
         </p>
       </Layout>
     )
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <Seo title="All posts" />
+
+      <div className="jumbotron">
+        <p className="book">
+          📖
+        </p>
+        <h1>{siteTitle}</h1>
+        <p className="description">
+          {siteDescription} Semoga bermanfaat 😀.
+        </p>
+      </div>
 
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
@@ -70,6 +79,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        description
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {

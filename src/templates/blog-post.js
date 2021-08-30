@@ -4,14 +4,18 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import ArticleData from "../components/ArticleData"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
+  const picture = post.frontmatter.picture?.childImageSharp?.fluid ?? null
+
+  console.dir(post.frontmatter)
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={siteTitle} imgUrl={picture}>
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -22,15 +26,26 @@ const BlogPostTemplate = ({ data, location }) => {
         itemType="http://schema.org/Article"
       >
         <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
+          {
+            post.frontmatter?.icon ? (
+              <div className="article-icon">
+                {post.frontmatter.icon}
+              </div>
+            ) : null
+          }
+          <h1 className="title" itemProp="headline">{post.frontmatter.title}</h1>
+          <p className="subtitle">{post.frontmatter.subtitle}</p>
+          <ArticleData date={post.frontmatter.date} wordCount={post.wordCount.words} />
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
-        <hr />
+
         <footer>
+          <h1 className="author">
+            Tentang Penulis
+          </h1>
           <Bio />
         </footer>
       </article>
@@ -83,8 +98,20 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "DD MMMM YYYY")
         description
+        icon
+        subtitle
+        picture {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+      wordCount{
+        words
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {

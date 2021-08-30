@@ -5,7 +5,7 @@ module.exports = {
       name: `Bayu Samudra`,
       summary: `seorang mahasiswa yang tertarik dengan dunia Pemrograman Web dan Computer Science.`,
     },
-    description: `Catatan-catatan bayu sehari-hari.`,
+    description: `Website ini merupakan semua catatan-catatan pembelajaran Bayu.`,
     siteUrl: `https://note.bayusamudra.my.id/`,
     social: {
       github: 'bayusamudra5502'
@@ -53,7 +53,12 @@ module.exports = {
             },
           },
           `gatsby-remark-katex`,
-          `gatsby-remark-prismjs`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              showLineNumbers: false
+            }
+          },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],

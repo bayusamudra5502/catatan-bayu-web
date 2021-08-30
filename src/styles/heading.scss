@@ -1,0 +1,63 @@
+/* Heading */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-heading;
+  margin-top: $spacing-12;
+  margin-bottom: $spacing-6;
+  line-height: $lineHeight-tight;
+  letter-spacing: -0.025em;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $fontWeight-bold;
+  color: $color-heading;
+}
+
+h1 {
+  font-weight: $fontWeight-black;
+  font-size: $fontSize-6;
+  color: $color-heading-black;
+}
+
+h2 {
+  font-size: $fontSize-5;
+}
+
+h3 {
+  font-size: $fontSize-4;
+}
+
+h4 {
+  font-size: $fontSize-3;
+}
+
+h5 {
+  font-size: $fontSize-2;
+}
+
+h6 {
+  font-size: $fontSize-1;
+}
+
+h1 > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a,
+h6 > a {
+  text-decoration: none;
+  color: inherit;
+}

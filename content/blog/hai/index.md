@@ -2,6 +2,9 @@
 slug: "/halo"
 date: "2019-05-04"
 title: "My first blog post"
+subtitle: "Ini adalah post pertama untuk melakukan testing"
+icon: "📑"
+picture: "./Halo.jpg"
 ---
 
 Halo Dunia 🌏
@@ -10,7 +13,14 @@ Halo Dunia 🌏
 #include <stdio.h>
 
 int main(){
-  printf("Halo, Dunia");
+  printf("Halo, Dunia"); // highlight-line
+  printf("Haii, Nama ku Bayu");
+
+  // highlight-start
+  int l = 12;
+  l++;
+  // highlight-end
+
   return 0;
 }
 ```
