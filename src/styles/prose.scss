@@ -1,0 +1,81 @@
+/* Prose */
+
+p {
+  line-height: $lineHeight-relaxed;
+  margin: $spacing-0 $spacing-0 $spacing-3 $spacing-0;
+  padding: $spacing-0;
+  margin-block-start: 0;
+}
+
+ul,
+ol {
+  margin-left: $spacing-0;
+  margin-right: $spacing-0;
+  margin-bottom: $spacing-4;
+  padding-inline-start: $spacing-5;
+  ul, li{
+    padding-inline-start: $spacing-1;
+  }
+}
+
+ul li,
+ol li {
+  padding-left: $spacing-0;
+  margin-bottom: calc(#{$spacing-4} / 2);
+}
+
+li > p {
+  margin-bottom: calc(#{$spacing-4} / 2);
+}
+
+li *:last-child {
+  margin-bottom: $spacing-0;
+}
+
+li > ul {
+  margin-left: $spacing-4;
+  margin-top: calc(#{$spacing-4} / 2);
+}
+
+blockquote {
+  color: $color-text-light;
+  margin-left: calc(-1 * #{$spacing-6});
+  margin-right: $spacing-8;
+  padding: $spacing-0 $spacing-0 $spacing-0 $spacing-6;
+  border-left: $spacing-1 solid $color-primary;
+  font-size: $fontSize-2;
+  font-style: italic;
+  margin-bottom: $spacing-8;
+}
+
+blockquote > :last-child {
+  margin-bottom: $spacing-0;
+}
+
+blockquote > ul,
+blockquote > ol {
+  list-style-position: inside;
+}
+
+table {
+  width: 100%;
+  margin-bottom: $spacing-8;
+  border-collapse: collapse;
+  border-spacing: 0.25rem;
+}
+
+table thead tr th {
+  border-bottom: 1px solid $color-accent;
+}
+
+th, td{
+  padding: $spacing-2;
+}
+
+tbody tr:hover{
+  background-color: $color-table-hover;
+}
+
+tr:nth-child(even){
+  background-color: $color-table-stripped;
+}
