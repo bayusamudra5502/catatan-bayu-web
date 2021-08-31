@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "gatsby": "^3.12.1",
-    "gatsby-image": "^3.11.0",
     "gatsby-plugin-feed": "^3.12.0",
     "gatsby-plugin-gatsby-cloud": "^2.11.0",
     "gatsby-plugin-google-analytics": "^3.12.0",
@@ -29,7 +28,9 @@
     "gatsby-source-filesystem": "^3.12.0",
     "gatsby-transformer-remark": "^4.9.0",
     "gatsby-transformer-sharp": "^3.12.0",
+    "install": "^0.13.0",
     "katex": "^0.13.16",
+    "npm": "^7.21.1",
     "prismjs": "^1.24.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
