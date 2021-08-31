@@ -3,20 +3,22 @@ import * as React from "react"
 import Twemoji from "react-twemoji"
 import Header from "./Header"
 
-const Layout = ({ location, children, img }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  const isRootPath = location.pathname === rootPath
-  const image = getImage(img)
+const Layout = ({ children, img }) => {
+  const image = !!img && getImage(img);
 
   return (
     <Twemoji>
-      <div className="global-wrapper" data-is-root-path={isRootPath}>
+      <div className="global-wrapper">
         <Header />
       </div>
-      <div className="picture">
-        <GatsbyImage image={image} />
-      </div>
-      <div div className="global-wrapper" data-is-root-path={isRootPath}>
+      {
+        !!image && (
+          <div className="picture">
+            <GatsbyImage image={image} alt="Banner Picture" />
+          </div>
+        )
+      }
+      <div className="global-wrapper">
         <main>{children}</main>
         <footer>
           Dibuat dengan <span style={{ margin: "3px" }}>❤️</span> oleh Bayu Samudra, {new Date().getFullYear()}

@@ -12,8 +12,6 @@ const BlogPostTemplate = ({ data, location }) => {
   const { previous, next } = data
   const picture = post.frontmatter.picture
 
-  console.dir(post.frontmatter)
-
   return (
     <Layout location={location} title={siteTitle} img={picture}>
       <Seo
