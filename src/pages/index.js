@@ -1,30 +1,23 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 
+import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Catatan Bayu`
-  const siteDescription =
-    data.site.siteMetadata?.description || "Ini adalah catatan bayu"
-  const posts = data.allMarkdownRemark.nodes.filter(post => {
-    console.dir(post)
-    return process.env.NODE_ENV !== "PRODUCTION" || !!post.frontmatter.published
-  })
+  const siteDescription = data.site.siteMetadata?.description || "Ini adalah catatan bayu"
+  const posts = data.allMarkdownRemark.nodes
 
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
         <Seo title="All posts" />
-
-        <div className="jumbotron">
-          <p className="book">📖</p>
-          <h1>{siteTitle}</h1>
-          <p className="description">{siteDescription} Semoga bermanfaat 😀.</p>
-        </div>
-
-        <p>Belum ada postingan disini... Coba cek lagi besok yaa..</p>
+        <Bio />
+        <p>
+          Belum ada postingan disini... Coba cek lagi besok yaa..
+        </p>
       </Layout>
     )
   }
@@ -34,12 +27,16 @@ const BlogIndex = ({ data, location }) => {
       <Seo title="All posts" />
 
       <div className="jumbotron">
-        <p className="book">📖</p>
+        <p className="book">
+          📖
+        </p>
         <h1>{siteTitle}</h1>
-        <p className="description">{siteDescription} Semoga bermanfaat 😀.</p>
+        <p className="description">
+          {siteDescription} Semoga bermanfaat 😀.
+        </p>
       </div>
 
-      <ol style={{ listStyle: `none`, padding: 0 }}>
+      <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
@@ -95,7 +92,6 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
-          published
         }
       }
     }
