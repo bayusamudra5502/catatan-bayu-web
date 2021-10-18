@@ -11,13 +11,14 @@ const Layout = ({ location, children }) => {
       <div className="header-wrapper" data-is-root-path={isRootPath}>
         <Header />
       </div>
-      <div div className="global-wrapper" data-is-root-path={isRootPath}>
+      <div className="global-wrapper" data-is-root-path={isRootPath}>
         <main>{children}</main>
         <footer>
-          Dibuat dengan <span style={{ margin: "3px" }}>❤️</span> oleh Bayu Samudra, {new Date().getFullYear()}
+          Dibuat dengan <span style={{ margin: "3px" }}>❤️</span> oleh Bayu
+          Samudra, {new Date().getFullYear()}
         </footer>
       </div>
-    </Twemoji >
+    </Twemoji>
   )
 }
 

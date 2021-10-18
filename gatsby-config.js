@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.config`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Catatan Bayu`,
@@ -8,7 +12,7 @@ module.exports = {
     description: `Website ini merupakan semua catatan-catatan pembelajaran Bayu.`,
     siteUrl: `https://note.bayusamudra.my.id/`,
     social: {
-      github: 'bayusamudra5502'
+      github: "bayusamudra5502",
     },
   },
   plugins: [
@@ -56,8 +60,8 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              showLineNumbers: false
-            }
+              showLineNumbers: false,
+            },
           },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
@@ -115,6 +119,7 @@ module.exports = {
                     frontmatter {
                       title
                       date
+                      published
                     }
                   }
                 }
