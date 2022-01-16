@@ -5,6 +5,7 @@ title: "My first blog post"
 subtitle: "Ini adalah post pertama untuk melakukan testing"
 icon: "📑"
 picture: "./Halo.jpg"
+draft: false
 ---
 
 Halo Dunia 🌏
@@ -25,15 +26,14 @@ int main(){
 }
 ```
 
-
-
 Ayoo semangaat 🔥🔥🔥🔥🔥
 
 Ini aku bermatematika $x + y = 2$ Waw berhasil.
 
 Cobalah kalian hitung ini yakk
-$$ 
-  12x+69y=100 
+
+$$
+  12x+69y=100
 $$
 
 ```php

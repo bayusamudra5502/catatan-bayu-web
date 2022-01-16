@@ -14,6 +14,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         allMarkdownRemark(
           sort: { fields: [frontmatter___date], order: ASC }
           limit: 1000
+          ${process.env.NODE_ENV !== "development" ?
+      "filter: {frontmatter: {draft: {ne: true}}}" : ""
+    }
         ) {
           nodes {
             id
