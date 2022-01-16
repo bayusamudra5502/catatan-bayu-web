@@ -146,11 +146,40 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-gatsby-cloud`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-sitemap`
-    }
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        cacheId: 'catatan-bayu',
+        skipWaiting: true,
+        clientsClaim: true,
+        dontCacheBustURLsMatching: /(\.js$|\.css$|static\/)/,
+        runtimeCaching: [
+          {
+            urlPattern: /(\.js$|\.css$|static\/)/,
+            handler: `CacheFirst`,
+          },
+          {
+            urlPattern: /^https?:.*\/page-data\/.*\.json/,
+            handler: `NetworkFirst`,
+          },
+          {
+            urlPattern:
+              /^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/,
+            handler: `StaleWhileRevalidate`,
+          },
+          {
+            urlPattern: /^https?:\/\/fonts\.googleapis\.com\/css/,
+            handler: `StaleWhileRevalidate`,
+          },
+          {
+            urlPattern: /^https?:\/\/fonts\.gstatic\.com/,
+            handler: 'CacheFirst'
+          },
+        ]
+      }
+    },
   ],
 }
