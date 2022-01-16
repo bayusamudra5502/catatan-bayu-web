@@ -15,7 +15,7 @@ jobs:
       - name: Menginstall Depedencies
         run: npm ci
       - name: Membangun Website
-        run: npm run
+        run: npm run build
         env:
           ANALYTICS_TRACKING_ID: ${{ secrets.ANALYTICS_TRACKING_ID }}
       - name: Deploy Website
