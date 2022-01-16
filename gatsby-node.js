@@ -15,8 +15,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           sort: { fields: [frontmatter___date], order: ASC }
           limit: 1000
           ${process.env.NODE_ENV !== "development" ?
-      "filter: {frontmatter: {draft: {ne: true}}}" : ""
-    }
+      "filter: {frontmatter: {draft: {eq: false}}}" : ""}
         ) {
           nodes {
             id

@@ -85,7 +85,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       limit: 20
-      filter: {frontmatter: {draft: {eq: true}}}
+      filter: {frontmatter: {draft: {eq: false}}}
     ) {
       nodes {
         excerpt
