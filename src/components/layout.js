@@ -1,13 +1,19 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as React from "react"
-import Twemoji from "react-twemoji"
 import Header from "./Header"
+import twemoji from "twemoji"
 
 const Layout = ({ children, img }) => {
+  const layoutRef = React.useRef();
   const image = !!img && getImage(img);
 
+  React.useEffect(() => {
+    layoutRef.current && twemoji.parse(layoutRef.current);
+  }, []);
+
+
   return (
-    <Twemoji>
+    <div ref={layoutRef}>
       <div className="global-wrapper">
         <Header />
       </div>
@@ -24,7 +30,7 @@ const Layout = ({ children, img }) => {
           Dibuat dengan <span style={{ margin: "3px" }}>❤️</span> oleh Bayu Samudra, {new Date().getFullYear()}
         </footer>
       </div>
-    </Twemoji >
+    </div>
   )
 }
 

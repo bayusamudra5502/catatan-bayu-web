@@ -43,7 +43,6 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          `gatsby-remark-embedder`,
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -126,6 +125,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
+            title: "Catatan Bayu Blog"
           },
         ],
       },
