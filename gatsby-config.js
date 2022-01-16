@@ -17,6 +17,14 @@ module.exports = {
   plugins: [
     `gatsby-plugin-image`,
     {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          process.env.ANALYTICS_MEASUREMENT_ID
+        ]
+      }
+    },
+    {
       resolve: `gatsby-plugin-nprogress`,
       options: {
         // Setting a color is optional.
@@ -70,13 +78,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: process.env.ANALYTICS_TRACKING_ID,
-        enableWebVitalsTracking: true,
-      },
-    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
