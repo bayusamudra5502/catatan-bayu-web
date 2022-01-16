@@ -8,6 +8,7 @@
     "url": "https://note.bayusamudra.my.id"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.3",
     "gatsby": "^4.5.2",
     "gatsby-plugin-feed": "^4.5.0",
     "gatsby-plugin-gatsby-cloud": "^4.5.1",
@@ -40,7 +41,11 @@
     "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
-    "prettier": "^2.5.1"
+    "autoprefixer": "^10.4.2",
+    "gatsby-plugin-postcss": "^5.5.0",
+    "postcss": "^8.4.5",
+    "prettier": "^2.5.1",
+    "tailwindcss": "^3.0.15"
   },
   "homepage": "https://note.bayusamudra.my.id",
   "keywords": [

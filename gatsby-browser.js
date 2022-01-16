@@ -11,3 +11,4 @@ import "prismjs/themes/prism-tomorrow.css"
 
 // Katex 
 import "katex/dist/katex.min.css"
+import './src/styles/global.css'
