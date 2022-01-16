@@ -1,3 +1,6 @@
+const dotenv = require('dotenv')
+dotenv.config()
+
 module.exports = {
   siteMetadata: {
     title: `Catatan Bayu`,
@@ -40,6 +43,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          `gatsby-remark-embedder`,
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -67,12 +71,13 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: `ADD YOUR TRACKING ID HERE`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.ANALYTICS_TRACKING_ID,
+        enableWebVitalsTracking: true,
+      },
+    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -133,7 +138,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#00757A`,
         theme_color: `#00757A`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
@@ -141,6 +146,6 @@ module.exports = {
     `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }

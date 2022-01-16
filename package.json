@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "catatan-bayu",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Blog yang berisi catatan bayu",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Bayu Samudra <contact@bayusamudra.my.id>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://note.bayusamudra.my.id"
   },
   "dependencies": {
     "gatsby": "^3.12.1",
@@ -20,6 +20,7 @@
     "gatsby-plugin-sass": "^4.12.0",
     "gatsby-plugin-sharp": "^3.12.0",
     "gatsby-remark-copy-linked-files": "^4.9.0",
+    "gatsby-remark-embedder": "^5.0.0",
     "gatsby-remark-images": "^5.9.0",
     "gatsby-remark-katex": "^5.9.0",
     "gatsby-remark-prismjs": "^5.9.0",
@@ -43,7 +44,7 @@
   "devDependencies": {
     "prettier": "2.3.2"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://note.bayusamudra.my.id",
   "keywords": [
     "gatsby"
   ],

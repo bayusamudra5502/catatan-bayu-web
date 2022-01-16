@@ -6,19 +6,21 @@ on:
       - development
 
 jobs:
-    deploy:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
-          with:
-            submodules: true
-        - name: Menginstall Depedencies
-          run: npm ci
-        - name: Membangun Website
-          run: npm run build
-        - name: Deploy Website
-          uses: peaceiris/actions-gh-pages@v3
-          with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: ./public
-            publish_branch: main
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Menginstall Depedencies
+        run: npm ci
+      - name: Membangun Website
+        run: npm run
+        env:
+          ANALYTICS_TRACKING_ID: ${{ secrets.ANALYTICS_TRACKING_ID }}
+      - name: Deploy Website
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: main
