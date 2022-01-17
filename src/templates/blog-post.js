@@ -116,13 +116,13 @@ export const pageQuery = graphql`
         words
       }
     }
-    previous: mdx(id: { eq: $previousPostId }) {
+    previous: mdx(frontmatter: {draft: {eq: false}}, id: { eq: $previousPostId }) {
       slug
       frontmatter {
         title
       }
     }
-    next: mdx(id: { eq: $nextPostId }) {
+    next: mdx(frontmatter: {draft: {eq: false}}, id: { eq: $nextPostId }) {
       slug
       frontmatter {
         title
