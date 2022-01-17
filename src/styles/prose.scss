@@ -13,7 +13,8 @@ ol {
   margin-right: $spacing-0;
   margin-bottom: $spacing-4;
   padding-inline-start: $spacing-5;
-  ul, li{
+  ul,
+  li {
     padding-inline-start: $spacing-1;
   }
 }
@@ -68,14 +69,15 @@ table thead tr th {
   border-bottom: 1px solid $color-accent;
 }
 
-th, td{
+th,
+td {
   padding: $spacing-2;
 }
 
-tbody tr:hover{
+tbody tr:hover {
   background-color: $color-table-hover;
 }
 
-tr:nth-child(even){
+tr:nth-child(even) {
   background-color: $color-table-stripped;
 }
