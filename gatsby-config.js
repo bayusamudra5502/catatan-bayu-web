@@ -51,9 +51,10 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.md`, `.mdx`],
-        remarkPlugins: [require("remark-math")],
-        rehypePlugins: [require("rehype-katex")],
         gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-katex`,
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -67,20 +68,16 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-remark-katex`,
-            options: {
-              strict: `ignore`
-            }
-          },
-          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               showLineNumbers: false
             }
           },
+
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
+        remarkPlugins: [require("remark-math")],
       },
     },
     `gatsby-transformer-sharp`,

@@ -28,7 +28,7 @@ int main(){
 
 Ayoo semangaat 🔥🔥🔥🔥🔥
 
-Ini aku bermatematika $x + y = 2$ Waw berhasil.
+Ini aku bermatematika $x_1 + y^2 = 2$ Waw berhasil.
 
 Cobalah kalian hitung ini yakk
 
