@@ -9,7 +9,7 @@ const Layout = ({ children, img }) => {
 
   React.useEffect(() => {
     layoutRef.current && twemoji.parse(layoutRef.current);
-  }, []);
+  }, [layoutRef]);
 
 
   return (

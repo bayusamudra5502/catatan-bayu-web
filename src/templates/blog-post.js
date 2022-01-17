@@ -24,6 +24,9 @@ const BlogPostTemplate = ({ data, location }) => {
         itemType="http://schema.org/Article"
       >
         <header>
+          {/* <div className="breadcrumb">
+            {post.fields.slug}
+          </div> */}
           {
             post.frontmatter?.icon ? (
               <div className="article-icon">
@@ -108,6 +111,9 @@ export const pageQuery = graphql`
            )
           }
         }
+      }
+      fields {
+        slug
       }
       wordCount{
         words

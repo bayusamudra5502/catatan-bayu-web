@@ -153,7 +153,6 @@ module.exports = {
       resolve: `gatsby-plugin-offline`,
       options: {
         cacheId: 'catatan-bayu',
-        skipWaiting: true,
         clientsClaim: true,
         dontCacheBustURLsMatching: /(\.js$|\.css$|static\/)/,
         runtimeCaching: [
