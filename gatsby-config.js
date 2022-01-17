@@ -51,6 +51,8 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.md`, `.mdx`],
+        remarkPlugins: [require("remark-math")],
+        rehypePlugins: [require("rehype-katex")],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -64,7 +66,12 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          `gatsby-remark-katex`,
+          {
+            resolve: `gatsby-remark-katex`,
+            options: {
+              strict: `ignore`
+            }
+          },
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
