@@ -1,13 +1,13 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import ArticleData from "../components/ArticleData"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const BlogPostTemplate = ({ data, location }) => {
-  const post = data.markdownRemark
+  const post = data.mdx
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
   const picture = post.frontmatter.picture
@@ -38,10 +38,9 @@ const BlogPostTemplate = ({ data, location }) => {
           <p className="subtitle">{post.frontmatter.subtitle}</p>
           <ArticleData date={post.frontmatter.date} wordCount={post.wordCount.words} />
         </header>
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
+        <MDXRenderer>
+          {post.body}
+        </MDXRenderer>
 
         <footer>
           <h1 className="author">
@@ -62,14 +61,14 @@ const BlogPostTemplate = ({ data, location }) => {
         >
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
+              <Link to={previous.slug} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
+              <Link to={next.slug} rel="next">
                 {next.frontmatter.title} →
               </Link>
             )}
@@ -93,10 +92,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    markdownRemark(id: { eq: $id }) {
+    mdx(id: { eq: $id }) {
       id
       excerpt(pruneLength: 160)
-      html
+      body
       frontmatter {
         title
         date(formatString: "DD MMMM YYYY")
@@ -112,25 +111,19 @@ export const pageQuery = graphql`
           }
         }
       }
-      fields {
-        slug
-      }
+      slug
       wordCount{
         words
       }
     }
-    previous: markdownRemark(id: { eq: $previousPostId }) {
-      fields {
-        slug
-      }
+    previous: mdx(id: { eq: $previousPostId }) {
+      slug
       frontmatter {
         title
       }
     }
-    next: markdownRemark(id: { eq: $nextPostId }) {
-      fields {
-        slug
-      }
+    next: mdx(id: { eq: $nextPostId }) {
+      slug
       frontmatter {
         title
       }
