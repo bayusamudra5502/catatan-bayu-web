@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Catatan Bayu Blog]]></title><description><![CDATA[Website ini merupakan semua catatan-catatan pembelajaran Bayu.]]></description><link>https://note.bayusamudra.my.id</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 17 Jan 2022 12:31:34 GMT</lastBuildDate><item><title><![CDATA[My first blog post]]></title><description><![CDATA[Halo Dunia 🌏 Ayoo semangaat 🔥🔥🔥🔥🔥 Ini aku bermatematika   Waw berhasil. Cobalah kalian hitung ini yakk Ini gambar aku looh Yess setup…]]></description><link>https://note.bayusamudra.my.idhai/</link><guid isPermaLink="false">https://note.bayusamudra.my.idhai/</guid><pubDate>Sat, 04 May 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Halo Dunia 🌏&lt;/p&gt;&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c&quot;&gt;&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token macro property&quot;&gt;&lt;span class=&quot;token directive-hash&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;token directive keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Catatan Bayu Blog]]></title><description><![CDATA[Website ini merupakan semua catatan-catatan pembelajaran Bayu.]]></description><link>https://note.bayusamudra.my.id</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 17 Jan 2022 21:53:05 GMT</lastBuildDate><item><title><![CDATA[My first blog post]]></title><description><![CDATA[Halo Dunia 🌏 Ayoo semangaat 🔥🔥🔥🔥🔥 Ini aku bermatematika   Waw berhasil. Cobalah kalian hitung ini yakk Ini gambar aku looh Yess setup…]]></description><link>https://note.bayusamudra.my.idhai/</link><guid isPermaLink="false">https://note.bayusamudra.my.idhai/</guid><pubDate>Sat, 04 May 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Halo Dunia 🌏&lt;/p&gt;&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c&quot;&gt;&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token macro property&quot;&gt;&lt;span class=&quot;token directive-hash&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;token directive keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
 
 &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
 &lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;  &lt;span class=&quot;token function&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&amp;quot;Halo, Dunia&amp;quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;  &lt;span class=&quot;token function&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&amp;quot;Haii, Nama ku Bayu&amp;quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -12,58 +12,4 @@
     &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom:56.32911392405063%;position:relative;bottom:0;left:0;background-image:url(&amp;#x27;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAIEBf/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAHkMyikpf/EABkQAAIDAQAAAAAAAAAAAAAAAAECABARMf/aAAgBAQABBQIFc1Ye3//EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAEDAQE/AYf/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAaEAACAgMAAAAAAAAAAAAAAAABEQAgITFB/9oACAEBAAE/IUTGYS8i6U//2gAMAwEAAgADAAAAELPv/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxAf/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oACAECAQE/ENV//8QAGRABAAMBAQAAAAAAAAAAAAAAAQARISBx/9oACAEBAAE/EC6PqNZSJpvXH//Z&amp;#x27;);background-size:cover;display:block&quot;&gt;&lt;/span&gt;
   &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;Gambar&quot; title=&quot;Gambar&quot; src=&quot;/static/e6ba439ede9a78ef136441708a16644f/828fb/Halo.jpg&quot; srcSet=&quot;/static/e6ba439ede9a78ef136441708a16644f/ff44c/Halo.jpg 158w,/static/e6ba439ede9a78ef136441708a16644f/a6688/Halo.jpg 315w,/static/e6ba439ede9a78ef136441708a16644f/828fb/Halo.jpg 630w,/static/e6ba439ede9a78ef136441708a16644f/0ede0/Halo.jpg 945w,/static/e6ba439ede9a78ef136441708a16644f/3ac88/Halo.jpg 1260w,/static/e6ba439ede9a78ef136441708a16644f/0f98f/Halo.jpg 1920w&quot; sizes=&quot;(max-width: 630px) 100vw, 630px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;/&gt;
   &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;&lt;p&gt;Yess setup aku berhasil wkwkwkwk :v&lt;/p&gt;</content:encoded></item><item><title><![CDATA[New Beginnings]]></title><description><![CDATA[Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in…]]></description><link>https://note.bayusamudra.my.idnew-beginnings/</link><guid isPermaLink="false">https://note.bayusamudra.my.idnew-beginnings/</guid><pubDate>Thu, 28 May 2015 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-right at the coast of the Semantics, a large language ocean. A small river named
-Duden flows by their place and supplies it with the necessary regelialia.&lt;/p&gt;&lt;h2&gt;On deer horse aboard tritely yikes and much&lt;/h2&gt;&lt;p&gt;The Big Oxmox advised her not to do so, because there were thousands of bad
-Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
-didn’t listen. She packed her seven versalia, put her initial into the belt and
-made herself on the way.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;This however showed weasel&lt;/li&gt;&lt;li&gt;Well uncritical so misled&lt;ul&gt;&lt;li&gt;this is very interesting&lt;ul&gt;&lt;li&gt;Beranak lagi&lt;ul&gt;&lt;li&gt;Bagoos&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;Wohoo&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;Goodness much until that fluid owl&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;When she reached the first hills of the &lt;strong&gt;Italic Mountains&lt;/strong&gt;, she had a last
-view back on the skyline of her hometown &lt;em&gt;Bookmarksgrove&lt;/em&gt;, the headline of
-&lt;a href=&quot;http://google.com&quot;&gt;Alphabet Village&lt;/a&gt; and the subline of her own road, the Line
-Lane. Pityful a rhetoric question ran over her cheek, then she continued her
-way. On her way she met a copy.&lt;/p&gt;&lt;h3&gt;Overlaid the jeepers uselessly much excluding&lt;/h3&gt;&lt;p&gt;But nothing the copy said could convince her and so it didn’t take long until a
-few insidious Copy Writers ambushed her, made her drunk with
-&lt;a href=&quot;http://google.com&quot;&gt;Longe and Parole&lt;/a&gt; and dragged her into their agency, where
-they abused her for their projects again and again. And if she hasn’t been
-rewritten, then they are still using her.&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-right at the coast of the Semantics, a large language ocean.&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;It is a paradisematic country, in which roasted parts of sentences fly into your
-mouth. Even the all-powerful Pointing has no control about the blind texts it is
-an almost unorthographic life One day however a small line of blind text by the
-name of Lorem Ipsum decided to leave for the far World of Grammar.&lt;/p&gt;&lt;h3&gt;According a funnily until pre-set or arrogant well cheerful&lt;/h3&gt;&lt;p&gt;The Big Oxmox advised her not to do so, because there were thousands of bad
-Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
-didn’t listen. She packed her seven versalia, put her initial into the belt and
-made herself on the way.&lt;/p&gt;&lt;ol&gt;&lt;li&gt;So baboon this&lt;/li&gt;&lt;li&gt;Mounted militant weasel gregariously admonishingly straightly hey&lt;/li&gt;&lt;li&gt;Dear foresaw hungry and much some overhung&lt;/li&gt;&lt;li&gt;Rash opossum less because less some amid besides yikes jeepers frenetic
-impassive fruitlessly shut&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;When she reached the first hills of the Italic Mountains, she had a last view
-back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet
-Village and the subline of her own road, the Line Lane. Pityful a rhetoric
-question ran over her cheek, then she continued her way. On her way she met a
-copy.&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;The copy warned the Little Blind Text, that where it came from it would have
-been rewritten a thousand times and everything that was left from its origin
-would be the word “and” and the Little Blind Text should turn around and
-return to its own, safe country.&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;But nothing the copy said could convince her and so it didn’t take long until a
-few insidious Copy Writers ambushed her, made her drunk with Longe and Parole
-and dragged her into their agency, where they abused her for their projects
-again and again. And if she hasn’t been rewritten, then they are still using
-her. Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts.&lt;/p&gt;&lt;h4&gt;Silent delightfully including because before one up barring chameleon&lt;/h4&gt;&lt;p&gt;Separated they live in Bookmarksgrove right at the coast of the Semantics, a
-large language ocean. A small river named Duden flows by their place and
-supplies it with the necessary regelialia. It is a paradisematic country, in
-which roasted parts of sentences fly into your mouth.&lt;/p&gt;&lt;p&gt;Even the all-powerful Pointing has no control about the blind texts it is an
-almost unorthographic life One day however a small line of blind text by the
-name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox
-advised her not to do so, because there were thousands of bad Commas, wild
-Question Marks and devious Semikoli, but the Little Blind Text didn’t listen.&lt;/p&gt;&lt;h5&gt;Wherever far wow thus a squirrel raccoon jeez jaguar this from along&lt;/h5&gt;&lt;p&gt;She packed her seven versalia, put her initial into the belt and made herself on
-the way. When she reached the first hills of the Italic Mountains, she had a
-last view back on the skyline of her hometown Bookmarksgrove, the headline of
-Alphabet Village and the subline of her own road, the Line Lane. Pityful a
-rhetoric question ran over her cheek, then she continued her way. On her way she
-met a copy.&lt;/p&gt;&lt;h6&gt;Slapped cozy a that lightheartedly and far&lt;/h6&gt;&lt;p&gt;The copy warned the Little Blind Text, that where it came from it would have
-been rewritten a thousand times and everything that was left from its origin
-would be the word “and” and the Little Blind Text should turn around and return
-to its own, safe country. But nothing the copy said could convince her and so it
-didn’t take long until a few insidious Copy Writers ambushed her, made her drunk
-with Longe and Parole and dragged her into their agency, where they abused her
-for their projects again and again.&lt;/p&gt;</content:encoded></item></channel></rss>
+    &lt;/span&gt;&lt;/p&gt;&lt;p&gt;Yess setup aku berhasil wkwkwkwk :v&lt;/p&gt;</content:encoded></item></channel></rss>
