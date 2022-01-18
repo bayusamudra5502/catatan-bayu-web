@@ -12,6 +12,7 @@ const BlogPostTemplate = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
   const picture = post.frontmatter.picture
+  const category = post.frontmatter?.category ?? []
 
   return (
     <Layout location={location} title={siteTitle} img={picture}>
@@ -40,11 +41,23 @@ const BlogPostTemplate = ({ data, location }) => {
         <MDXRenderer>
           {post.body}
         </MDXRenderer>
+        <div className="category">
+          <h2>Kategori Artikel</h2>
+          <ul>
+            {category.map((el) => {
+              return <li>
+                <Link to={`/category/${el}`}>
+                  {el}
+                </Link>
+              </li>
+            })}
+          </ul>
+        </div>
 
         <footer>
-          <h1 className="author">
+          <h2 className="author">
             Tentang Penulis
-          </h1>
+          </h2>
           <Bio />
         </footer>
       </article>

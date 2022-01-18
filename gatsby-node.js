@@ -1,6 +1,47 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+async function renderAllCategory({ actions, graphql, reporter }) {
+  const { createPage } = actions
+  const postByCategory = path.resolve("./src/templates/category-page.js")
+  const result = await graphql(`
+    {
+      allMdx {
+        nodes {
+          frontmatter {
+            category
+          }
+        }
+      }
+    }
+  `)
+
+  if (result.errors) {
+    reporter.panicOnBuild(
+      `There was an error loading your all category`,
+      result.errors
+    )
+    return
+  }
+
+  const categories = new Set()
+  result.data.allMdx.nodes.forEach(({ frontmatter: { category } }) => {
+    category?.forEach((el) => {
+      categories.add(el)
+    })
+  })
+
+  categories.forEach((categoryName) => {
+    createPage({
+      path: `/category/${categoryName}`,
+      component: postByCategory,
+      context: {
+        category: categoryName
+      }
+    })
+  })
+}
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
@@ -56,6 +97,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
     })
   }
+
+  await renderAllCategory({ actions, graphql, reporter })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

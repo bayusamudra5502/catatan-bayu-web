@@ -79,6 +79,7 @@
 
 .author {
   font-size: $fontSize-4;
+  margin-top: 1rem;
 }
 
 .article-icon {
@@ -220,4 +221,38 @@
 .article {
   @extend .global-wrapper;
   padding-top: 0;
+}
+
+.category {
+  ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+  }
+
+  h2 {
+    font-size: $fontSize-3;
+  }
+
+  li {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #4b4744;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  li:hover {
+    background-color: #3f3e3c;
+  }
 }

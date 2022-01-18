@@ -6,6 +6,7 @@ subtitle: "Ini adalah post pertama untuk melakukan testing"
 icon: "📑"
 picture: "./Halo.jpg"
 draft: false
+category: [welcome, testing]
 ---
 
 Halo Dunia 🌏
