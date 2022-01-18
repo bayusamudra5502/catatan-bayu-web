@@ -8,8 +8,8 @@ const blogQuery = `
         title
         subtitle
       }
-      excerpt(pruneLength: 5000)
-      html
+      content: excerpt(pruneLength: 5000)
+      excerpt
       id
     }
   }
