@@ -19,7 +19,7 @@ jobs:
         with:
           # npm cache files are stored in `~/.npm` on Linux/macOS
           path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
@@ -31,15 +31,15 @@ jobs:
         with:
           # npm cache files are stored in `~/.npm` on Linux/macOS
           path: ./.cache
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-${{ env.cache-name }}
             ${{ runner.os }}-build-
             ${{ runner.os }}-
       - name: Menginstall Depedencies
-        run: npm ci
+        run: yarn install
       - name: Membangun Website
-        run: npm run build
+        run: yarn build
         env:
           ANALYTICS_TRACKING_ID: ${{ secrets.ANALYTICS_TRACKING_ID }}
           ANALYTICS_MEASUREMENT_ID: ${{ secrets.ANALYTICS_MEASUREMENT_ID }}
