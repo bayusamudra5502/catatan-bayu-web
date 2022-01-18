@@ -14,7 +14,7 @@
 importScripts("workbox-v4.3.1/workbox-sw.js");
 workbox.setConfig({modulePathPrefix: "workbox-v4.3.1"});
 
-workbox.core.setCacheNameDetails({prefix: "gatsby-plugin-offline"});
+workbox.core.setCacheNameDetails({prefix: "catatan-bayu"});
 
 workbox.core.skipWaiting();
 
@@ -27,7 +27,7 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-078fa8587204a49c8544.js"
+    "url": "webpack-runtime-2b2d8f42a41763be7ffc.js"
   },
   {
     "url": "framework-e80ec1369d925b792d58.js"
@@ -36,11 +36,11 @@ self.__precacheManifest = [
     "url": "styles.c2e043762c2ad703cb78.css"
   },
   {
-    "url": "app-02e04c513705a4b4ae3e.js"
+    "url": "app-dd87fcbe6e23d8d7e845.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "1f6eac98f1fc275b06fb12224096e9de"
+    "revision": "5a9b389218c07e6f31fe580ac3c863c8"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-f7f0967114f9ae745ede.js"
@@ -56,9 +56,11 @@ self.__precacheManifest = [
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.routing.registerRoute(/(\.js$|\.css$|static\/)/, new workbox.strategies.CacheFirst(), 'GET');
-workbox.routing.registerRoute(/^https?:.*\/page-data\/.*\.json/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
-workbox.routing.registerRoute(/^https?:.*\.(png|jpg|jpeg|webp|avif|svg|gif|tiff|js|woff|woff2|json|css)$/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
+workbox.routing.registerRoute(/^https?:.*\/page-data\/.*\.json/, new workbox.strategies.NetworkFirst(), 'GET');
+workbox.routing.registerRoute(/^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
 workbox.routing.registerRoute(/^https?:\/\/fonts\.googleapis\.com\/css/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
+workbox.routing.registerRoute(/^https?:\/\/fonts\.gstatic\.com/, new workbox.strategies.CacheFirst(), 'GET');
+workbox.routing.registerRoute(/https?:\/\/twemoji\.maxcdn\.com/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
 
 /* global importScripts, workbox, idbKeyval */
 importScripts(`idb-keyval-3.2.0-iife.min.js`)
@@ -160,7 +162,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-02e04c513705a4b4ae3e.js`))) {
+  if (!resources || !(await caches.match(`/app-dd87fcbe6e23d8d7e845.js`))) {
     return await fetch(event.request)
   }
 
