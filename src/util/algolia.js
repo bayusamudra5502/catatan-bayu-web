@@ -1,6 +1,6 @@
 const blogQuery = `
 {
-  allMdx {
+  allMdx(filter: {frontmatter: {draft: {eq: false}}}) {
     nodes {
       frontmatter {
         category
