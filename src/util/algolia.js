@@ -7,7 +7,9 @@ const blogQuery = `
         date
         title
         subtitle
+        description
       }
+      slug
       content: excerpt(pruneLength: 5000)
       excerpt
       id

@@ -304,3 +304,73 @@
     transform: translateY(0.25rem);
   }
 }
+
+.search-page {
+  .search-icon {
+    font-size: 2.3rem;
+  }
+
+  h1 {
+    margin: 10px 0 30px;
+    font-size: $fontSize-5;
+  }
+
+  .more-button {
+    @extend a;
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+
+    &:hover {
+      text-decoration: none;
+      background-color: #3f3e3c;
+    }
+
+    &.hide {
+      display: none;
+    }
+  }
+}
+
+.search-component {
+  margin: 15px 0;
+
+  .search-bar {
+    border: 2px solid white;
+    display: flex;
+    width: 100%;
+    border-radius: 5px;
+
+    button {
+      padding: 0 15px;
+      background-color: transparent;
+      color: white;
+      border: 0;
+      cursor: pointer;
+    }
+
+    input {
+      font-size: 1.1rem;
+      padding: 10px;
+      background-color: transparent;
+      border: none;
+      color: white;
+      flex: 1;
+      outline: none;
+    }
+  }
+
+  .error {
+    color: red;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  .hide {
+    display: none;
+  }
+}

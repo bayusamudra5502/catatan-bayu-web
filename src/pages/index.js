@@ -53,7 +53,9 @@ const BlogIndex = ({ data, location }) => {
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <small>{post.frontmatter.date}</small>
+                  <small>
+                    {new Intl.DateTimeFormat("id", { dateStyle: "long" }).format(new Date(post.frontmatter.date))}
+                  </small>
                 </header>
                 <section>
                   <p
