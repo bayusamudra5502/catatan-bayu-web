@@ -31,7 +31,7 @@ export default function ArticleData({ date, wordCount }) {
         alt="Profile picture"
       />
       <div>
-        <p className="author">{author.name}</p>
+        <p className="author"><a href="https://bayusamudra.my.id">{author.name}</a></p>
         <p>{new Intl.DateTimeFormat("id", { dateStyle: "long" }).format(new Date(date))} • {Math.ceil(wordCount / 200)} menit</p>
       </div>
     </div>

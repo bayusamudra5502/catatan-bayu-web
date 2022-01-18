@@ -10,7 +10,9 @@ export default function CategoryPage({ data, location, pageContext }) {
   return (
     <Layout location={location}>
       <Seo title="All posts" />
-
+      <div>
+        <Link to="/category">‹ Kembali ke daftar kategori</Link>
+      </div>
       <div className="jumbotron">
         <p className="book">
           🏷️
