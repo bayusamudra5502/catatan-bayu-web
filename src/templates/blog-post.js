@@ -42,7 +42,7 @@ const BlogPostTemplate = ({ data, location }) => {
           {post.body}
         </MDXRenderer>
         <div className="category">
-          <h2>Kategori Artikel</h2>
+          {category.length > 0 ? <h2>Kategori Artikel</h2> : null}
           <ul>
             {category.map((el) => {
               return <li>
