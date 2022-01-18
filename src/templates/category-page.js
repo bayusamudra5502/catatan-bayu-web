@@ -34,7 +34,7 @@ export default function CategoryPage({ data, location, pageContext }) {
               >
                 <header>
                   <h2>
-                    <Link to={post.slug} itemProp="url">
+                    <Link to={`/${post.slug}`} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
