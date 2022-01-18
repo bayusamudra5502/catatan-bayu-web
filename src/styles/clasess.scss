@@ -256,3 +256,18 @@
     background-color: #3f3e3c;
   }
 }
+
+.categories {
+  li {
+    text-transform: capitalize;
+  }
+
+  padding: 0;
+  list-style-type: none;
+  list-style-position: inside;
+
+  li::before {
+    content: "🏷️";
+    margin-right: 5px;
+  }
+}
