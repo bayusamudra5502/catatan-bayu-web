@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-category-page-js",
+    "path": "/category/welcome",
+    "result": {"data":{"allMdx":{"nodes":[{"slug":"hai/","excerpt":"Halo Dunia 🌏 Ayoo semangaat 🔥🔥🔥🔥🔥 Ini aku bermatematika   Waw berhasil. Cobalah kalian hitung ini yakk Ini gambar aku looh Yess setup…","frontmatter":{"date":"May 04, 2019","title":"My first blog post","description":null}}]}},"pageContext":{"category":"welcome"}},
+    "staticQueryHashes": ["2841359383"]}
