@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-pages-category-js",
+    "path": "/category/",
+    "result": {"data":{"allMdx":{"nodes":[{"frontmatter":{"category":["welcome","testing"]}},{"frontmatter":{"category":null}},{"frontmatter":{"category":null}},{"frontmatter":{"category":null}},{"frontmatter":{"category":null}}]}},"pageContext":{}},
+    "staticQueryHashes": ["2841359383"]}
