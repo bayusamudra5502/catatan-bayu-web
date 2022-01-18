@@ -45,7 +45,7 @@ const BlogPostTemplate = ({ data, location }) => {
           {category.length > 0 ? <h2>Kategori Artikel</h2> : null}
           <ul>
             {category.map((el) => {
-              return <li>
+              return <li key={el}>
                 <Link to={`/category/${el}`}>
                   {el}
                 </Link>
