@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import ArticleData from "../components/ArticleData"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import Breadcrumb from "../components/Breadcrumb"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.mdx
@@ -23,10 +24,8 @@ const BlogPostTemplate = ({ data, location }) => {
         itemScope
         itemType="http://schema.org/Article"
       >
+        <Breadcrumb slug={post.slug} />
         <header>
-          {/* <div className="breadcrumb">
-            {post.fields.slug}
-          </div> */}
           {
             post.frontmatter?.icon ? (
               <div className="article-icon">
@@ -61,14 +60,14 @@ const BlogPostTemplate = ({ data, location }) => {
         >
           <li>
             {previous && (
-              <Link to={previous.slug} rel="prev">
+              <Link to={"/" + previous.slug} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.slug} rel="next">
+              <Link to={"/" + next.slug} rel="next">
                 {next.frontmatter.title} →
               </Link>
             )}
@@ -97,6 +96,7 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       body
       frontmatter {
+        category
         title
         date(formatString: "DD MMMM YYYY")
         description

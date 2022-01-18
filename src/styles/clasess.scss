@@ -1,7 +1,7 @@
 .global-wrapper {
   margin: $spacing-0 auto;
   max-width: $maxWidth-wrapper;
-  padding: $spacing-10 $spacing-5;
+  padding: $spacing-5 $spacing-5;
 }
 
 .global-wrapper[data-is-root-path="true"] .bio {
@@ -125,7 +125,7 @@
 .jumbotron {
   font-size: 1.25em;
   text-align: center;
-  margin-bottom: 5rem;
+  margin: 2.5rem 0 5rem;
 
   h1 {
     margin-top: 1rem;
@@ -160,6 +160,7 @@
 }
 
 .picture {
+  margin-bottom: 30px;
   max-height: 200px;
   overflow: hidden;
   position: relative;
@@ -182,4 +183,41 @@
   @media screen and (max-width: $maxWidth-md) {
     max-height: 100px;
   }
+}
+
+.article-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.breadcrumb {
+  padding-left: 0;
+
+  a {
+    text-decoration: none;
+  }
+
+  li {
+    display: inline-block;
+    padding: 0 5px 0 0;
+  }
+
+  li::after {
+    content: "»";
+    display: inline-block;
+    padding: 0 0 0 5px;
+  }
+
+  li:last-child::after {
+    content: "";
+  }
+
+  li:last-child {
+    font-weight: bold;
+  }
+}
+
+.article {
+  @extend .global-wrapper;
+  padding-top: 0;
 }

@@ -24,7 +24,7 @@ const Layout = ({ children, img }) => {
           </div>
         )
       }
-      <div className="global-wrapper">
+      <div className="article">
         <main>{children}</main>
         <footer>
           Dibuat dengan <span style={{ margin: "3px" }}>❤️</span> oleh Bayu Samudra, {new Date().getFullYear()}

@@ -57,3 +57,11 @@ img {
     list-style-position: inside;
   }
 }
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

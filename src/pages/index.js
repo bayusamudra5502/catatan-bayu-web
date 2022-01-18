@@ -36,7 +36,7 @@ const BlogIndex = ({ data, location }) => {
         </p>
       </div>
 
-      <ol style={{ listStyle: `none` }}>
+      <ol className="article-list">
         {posts.map(post => {
           const title = post.frontmatter.title || post.slug
 
