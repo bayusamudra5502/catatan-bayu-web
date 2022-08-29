@@ -60,10 +60,9 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-mdx`,
+      resolve: `gatsby-transformer-remark`,
       options: {
-        extensions: [`.md`, `.mdx`],
-        gatsbyRemarkPlugins: [
+        plugins: [
           {
             resolve: `gatsby-remark-katex`,
           },
@@ -85,12 +84,10 @@ module.exports = {
               showLineNumbers: false
             }
           },
-
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
-        remarkPlugins: [require("remark-math")],
-      },
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sass`,
@@ -117,15 +114,15 @@ module.exports = {
                 return Object.assign({}, node.frontmatter, {
                   description: node.excerpt,
                   date: node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + node.slug,
-                  guid: site.siteMetadata.siteUrl + node.slug,
+                  url: site.siteMetadata.siteUrl + node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + node.fields.slug,
                   custom_elements: [{ "content:encoded": node.html }],
                 })
               })
             },
             query: `
               {
-                allMdx(
+                allMarkdownRemark(
                   sort: { order: DESC, fields: [frontmatter___date] },
                   filter: {frontmatter: {draft: {ne: true}}}
                 ) {

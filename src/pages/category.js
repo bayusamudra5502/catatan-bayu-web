@@ -6,7 +6,7 @@ import Seo from '../components/seo'
 export default function CategoryPage({ data, location }) {
   const categoriesSet = new Set()
 
-  data.allMdx.nodes.forEach(({ frontmatter: { category } }) => {
+  data.allMarkdownRemark.nodes.forEach(({ frontmatter: { category } }) => {
     category?.forEach((el) => {
       categoriesSet.add(el)
     })
@@ -46,7 +46,7 @@ export default function CategoryPage({ data, location }) {
 
 export const pageQuery = graphql`
   query {
-    allMdx {
+    allMarkdownRemark {
       nodes {
         frontmatter {
           category

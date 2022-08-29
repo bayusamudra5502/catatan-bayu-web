@@ -4,11 +4,10 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import ArticleData from "../components/ArticleData"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 import Breadcrumb from "../components/Breadcrumb"
 
 const BlogPostTemplate = ({ data, location }) => {
-  const post = data.mdx
+  const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
   const picture = post.frontmatter.picture
@@ -19,13 +18,15 @@ const BlogPostTemplate = ({ data, location }) => {
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        lang="id"
+        image={picture}
       />
-      <article
+      <main
         className="blog-post"
         itemScope
         itemType="http://schema.org/Article"
       >
-        <Breadcrumb slug={post.slug} />
+        <Breadcrumb slug={post.fields.slug} />
         <header>
           {
             post.frontmatter?.icon ? (
@@ -36,11 +37,10 @@ const BlogPostTemplate = ({ data, location }) => {
           }
           <h1 className="title" itemProp="headline">{post.frontmatter.title}</h1>
           <p className="subtitle">{post.frontmatter.subtitle}</p>
-          <ArticleData date={post.frontmatter.date} wordCount={post.wordCount.words} />
+          <ArticleData date={post.frontmatter.date} wordCount={10} />
         </header>
-        <MDXRenderer>
-          {post.body}
-        </MDXRenderer>
+        <article dangerouslySetInnerHTML={{ __html: post.html }}
+          itemProp="articleBody" />
         <div className="category">
           {category.length > 0 ? <h2>Kategori Artikel</h2> : null}
           <ul>
@@ -60,7 +60,7 @@ const BlogPostTemplate = ({ data, location }) => {
           </h2>
           <Bio />
         </footer>
-      </article>
+      </main>
       <nav className="blog-post-nav">
         <ul
           style={{
@@ -73,14 +73,14 @@ const BlogPostTemplate = ({ data, location }) => {
         >
           <li>
             {previous && (
-              <Link to={"/" + previous.slug} rel="prev">
+              <Link to={"/" + previous.fields.slug} rel="prev">
                 ‹ {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={"/" + next.slug} rel="next">
+              <Link to={"/" + next.fields.slug} rel="next">
                 {next.frontmatter.title} ›
               </Link>
             )}
@@ -94,7 +94,7 @@ const BlogPostTemplate = ({ data, location }) => {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug(
+  query (
     $id: String!
     $previousPostId: String
     $nextPostId: String
@@ -104,10 +104,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    mdx(id: { eq: $id }) {
+    markdownRemark(id: { eq: $id }) {
       id
       excerpt(pruneLength: 160)
-      body
+      html
       frontmatter {
         category
         title
@@ -124,19 +124,22 @@ export const pageQuery = graphql`
           }
         }
       }
-      slug
-      wordCount{
-        words
+      fields {
+        slug
       }
     }
-    previous: mdx(frontmatter: {draft: {eq: false}}, id: { eq: $previousPostId }) {
-      slug
+    previous: markdownRemark(frontmatter: {draft: {eq: false}}, id: { eq: $previousPostId }) {
+      fields {
+        slug
+      }
       frontmatter {
         title
       }
     }
-    next: mdx(frontmatter: {draft: {eq: false}}, id: { eq: $nextPostId }) {
-      slug
+    next: markdownRemark(frontmatter: {draft: {eq: false}}, id: { eq: $nextPostId }) {
+      fields {
+        slug
+      }
       frontmatter {
         title
       }
