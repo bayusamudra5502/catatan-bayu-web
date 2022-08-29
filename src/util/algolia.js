@@ -1,6 +1,6 @@
 const blogQuery = `
 {
-  allMdx(filter: {frontmatter: {draft: {eq: false}}}) {
+  allMarkdownRemark(filter: {frontmatter: {draft: {eq: false}}}) {
     nodes {
       frontmatter {
         category
@@ -9,7 +9,9 @@ const blogQuery = `
         subtitle
         description
       }
-      slug
+      fields{
+        slug
+      }
       content: excerpt(pruneLength: 5000)
       excerpt
       id
@@ -19,7 +21,7 @@ const blogQuery = `
 `
 
 function algoliaTransformer({ data }) {
-  return data.allMdx.nodes.map(({
+  return data.allMarkdownRemark.nodes.map(({
     id, frontmatter, ...others
   }) => ({
     objectID: id,

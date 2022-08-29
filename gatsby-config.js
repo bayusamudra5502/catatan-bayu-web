@@ -1,7 +1,7 @@
 const dotenv = require('dotenv')
 dotenv.config()
 
-const queries = require('./src/util/algolia')
+// const queries = require('./src/util/algolia')
 
 module.exports = {
   siteMetadata: {
@@ -17,16 +17,16 @@ module.exports = {
     },
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-algolia`,
-      options: {
-        appId: process.env.ALGOLIA_APP_ID,
-        apiKey: process.env.ALGOLIA_ADMIN_KEY,
-        indexName: process.env.ALGOLIA_INDEX_NAME,
-        queries,
-        chunkSize: 1000
-      }
-    },
+    // {
+    //   resolve: `gatsby-plugin-algolia`,
+    //   options: {
+    //     appId: process.env.ALGOLIA_APP_ID,
+    //     apiKey: process.env.ALGOLIA_ADMIN_KEY,
+    //     indexName: process.env.ALGOLIA_INDEX_NAME,
+    //     queries,
+    //     chunkSize: 1000
+    //   }
+    // },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-plugin-google-gtag`,
@@ -109,8 +109,8 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.nodes.map(node => {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.nodes.map(node => {
                 return Object.assign({}, node.frontmatter, {
                   description: node.excerpt,
                   date: node.frontmatter.date,
@@ -129,7 +129,9 @@ module.exports = {
                   nodes {
                     excerpt
                     html
-                    slug
+                    fields{
+                      slug
+                    }
                     frontmatter {
                       title
                       date
