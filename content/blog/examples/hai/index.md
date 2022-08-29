@@ -5,7 +5,7 @@ title: "My first blog post"
 subtitle: "Ini adalah post pertama untuk melakukan testing"
 icon: "📑"
 picture: "./Halo.jpg"
-draft: false
+draft: true
 category: [welcome, testing]
 ---
 
