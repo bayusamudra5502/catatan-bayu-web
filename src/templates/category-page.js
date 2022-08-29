@@ -25,7 +25,7 @@ export default function CategoryPage({ data, location, pageContext }) {
 
       <ol className="article-list">
         {posts.map(post => {
-          const title = post.frontmatter.title || post.slug
+          const title = post.frontmatter.title || post.fields.slug
 
           return (
             <li key={post.slug}>
@@ -67,7 +67,9 @@ export const pageQuery = graphql`
       filter: {frontmatter: {category: {in: [$category]}}}
     ) {
       nodes {
-        slug
+        fields {
+          slug
+        }
         excerpt
         frontmatter {
           date(formatString: "MMMM DD, YYYY")

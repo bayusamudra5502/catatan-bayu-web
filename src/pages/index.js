@@ -38,10 +38,10 @@ const BlogIndex = ({ data, location }) => {
 
       <ol className="article-list">
         {posts.map(post => {
-          const title = post.frontmatter.title || post.slug
+          const title = post.frontmatter.title || post.fields.slug
 
           return (
-            <li key={post.slug}>
+            <li key={post.fields.slug}>
               <article
                 className="post-list-item"
                 itemScope
@@ -49,7 +49,7 @@ const BlogIndex = ({ data, location }) => {
               >
                 <header>
                   <h2>
-                    <Link to={post.slug} itemProp="url">
+                    <Link to={post.fields.slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
@@ -91,7 +91,9 @@ export const pageQuery = graphql`
     ) {
       nodes {
         excerpt
-        slug
+        fields {
+          slug
+        }
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
           title

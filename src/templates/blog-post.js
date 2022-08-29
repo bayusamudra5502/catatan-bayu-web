@@ -4,7 +4,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import ArticleData from "../components/ArticleData"
-import { MDXRenderer } from "gatsby-plugin-mdx"
+import { MDXProvider } from "@mdx-js/react"
 import Breadcrumb from "../components/Breadcrumb"
 
 const BlogPostTemplate = ({ data, location }) => {
@@ -25,7 +25,7 @@ const BlogPostTemplate = ({ data, location }) => {
         itemScope
         itemType="http://schema.org/Article"
       >
-        <Breadcrumb slug={post.slug} />
+        <Breadcrumb slug={post.fields.slug} />
         <header>
           {
             post.frontmatter?.icon ? (
@@ -36,11 +36,11 @@ const BlogPostTemplate = ({ data, location }) => {
           }
           <h1 className="title" itemProp="headline">{post.frontmatter.title}</h1>
           <p className="subtitle">{post.frontmatter.subtitle}</p>
-          <ArticleData date={post.frontmatter.date} wordCount={post.wordCount.words} />
+          <ArticleData date={post.frontmatter.date} wordCount={10} />
         </header>
-        <MDXRenderer>
+        <MDXProvider>
           {post.body}
-        </MDXRenderer>
+        </MDXProvider>
         <div className="category">
           {category.length > 0 ? <h2>Kategori Artikel</h2> : null}
           <ul>
@@ -73,14 +73,14 @@ const BlogPostTemplate = ({ data, location }) => {
         >
           <li>
             {previous && (
-              <Link to={"/" + previous.slug} rel="prev">
+              <Link to={"/" + previous.fields.slug} rel="prev">
                 ‹ {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={"/" + next.slug} rel="next">
+              <Link to={"/" + next.fields.slug} rel="next">
                 {next.frontmatter.title} ›
               </Link>
             )}
@@ -124,19 +124,22 @@ export const pageQuery = graphql`
           }
         }
       }
-      slug
-      wordCount{
-        words
+      fields {
+        slug
       }
     }
     previous: mdx(frontmatter: {draft: {eq: false}}, id: { eq: $previousPostId }) {
-      slug
+      fields {
+        slug
+      }
       frontmatter {
         title
       }
     }
     next: mdx(frontmatter: {draft: {eq: false}}, id: { eq: $nextPostId }) {
-      slug
+      fields {
+        slug
+      }
       frontmatter {
         title
       }
