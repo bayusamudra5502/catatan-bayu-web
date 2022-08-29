@@ -4,11 +4,10 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import ArticleData from "../components/ArticleData"
-import { MDXProvider } from "@mdx-js/react"
 import Breadcrumb from "../components/Breadcrumb"
 
 const BlogPostTemplate = ({ data, location }) => {
-  const post = data.mdx
+  const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
   const picture = post.frontmatter.picture
@@ -19,8 +18,9 @@ const BlogPostTemplate = ({ data, location }) => {
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        lang="id"
       />
-      <article
+      <main
         className="blog-post"
         itemScope
         itemType="http://schema.org/Article"
@@ -38,9 +38,8 @@ const BlogPostTemplate = ({ data, location }) => {
           <p className="subtitle">{post.frontmatter.subtitle}</p>
           <ArticleData date={post.frontmatter.date} wordCount={10} />
         </header>
-        <MDXProvider>
-          {post.body}
-        </MDXProvider>
+        <article dangerouslySetInnerHTML={{ __html: post.html }}
+          itemProp="articleBody" />
         <div className="category">
           {category.length > 0 ? <h2>Kategori Artikel</h2> : null}
           <ul>
@@ -60,7 +59,7 @@ const BlogPostTemplate = ({ data, location }) => {
           </h2>
           <Bio />
         </footer>
-      </article>
+      </main>
       <nav className="blog-post-nav">
         <ul
           style={{
@@ -104,10 +103,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    mdx(id: { eq: $id }) {
+    markdownRemark(id: { eq: $id }) {
       id
       excerpt(pruneLength: 160)
-      body
+      html
       frontmatter {
         category
         title
@@ -128,7 +127,7 @@ export const pageQuery = graphql`
         slug
       }
     }
-    previous: mdx(frontmatter: {draft: {eq: false}}, id: { eq: $previousPostId }) {
+    previous: markdownRemark(frontmatter: {draft: {eq: false}}, id: { eq: $previousPostId }) {
       fields {
         slug
       }
@@ -136,7 +135,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    next: mdx(frontmatter: {draft: {eq: false}}, id: { eq: $nextPostId }) {
+    next: markdownRemark(frontmatter: {draft: {eq: false}}, id: { eq: $nextPostId }) {
       fields {
         slug
       }

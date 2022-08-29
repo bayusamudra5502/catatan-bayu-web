@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Breadcrumb({ slug }) {
   let temp = "";
-  const links = slug.slice(0, -1).split('/').map((token) => {
+  const links = slug.slice(1, -1).split('/').map((token) => {
     temp += `/${token}`;
     return { url: temp, token };
   });

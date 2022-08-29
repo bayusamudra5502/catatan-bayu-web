@@ -60,37 +60,33 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-mdx`,
+      resolve: `gatsby-transformer-remark`,
       options: {
-        extensions: [`.mdx`, '.md'],
-        mdxOptions: {
-          gatsbyRemarkPlugins: [
-            {
-              resolve: `gatsby-remark-katex`,
+        plugins: [
+          {
+            resolve: `gatsby-remark-katex`,
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 630,
             },
-            {
-              resolve: `gatsby-remark-images`,
-              options: {
-                maxWidth: 630,
-              },
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
             },
-            {
-              resolve: `gatsby-remark-responsive-iframe`,
-              options: {
-                wrapperStyle: `margin-bottom: 1.0725rem`,
-              },
-            },
-            {
-              resolve: `gatsby-remark-prismjs`,
-              options: {
-                showLineNumbers: false
-              }
-            },
-
-            `gatsby-remark-copy-linked-files`,
-            `gatsby-remark-smartypants`,
-          ],
-        },
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              showLineNumbers: false
+            }
+          },
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
+        ],
       }
     },
     `gatsby-transformer-sharp`,
@@ -126,7 +122,7 @@ module.exports = {
             },
             query: `
               {
-                allMdx(
+                allMarkdownRemark(
                   sort: { order: DESC, fields: [frontmatter___date] },
                   filter: {frontmatter: {draft: {ne: true}}}
                 ) {

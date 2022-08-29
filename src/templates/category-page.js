@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 import Seo from '../components/seo'
 
 export default function CategoryPage({ data, location, pageContext }) {
-  const posts = data.allMdx.nodes
+  const posts = data.allMarkdownRemark.nodes
   const { category } = pageContext
 
   return (
@@ -60,8 +60,8 @@ export default function CategoryPage({ data, location, pageContext }) {
 }
 
 export const pageQuery = graphql`
-  query BlogCategory($category: String) {
-    allMdx(
+  query ($category: String) {
+    allMarkdownRemark(
       sort: {fields: [frontmatter___date], order: DESC}
       limit: 150
       filter: {frontmatter: {category: {in: [$category]}}}
